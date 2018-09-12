@@ -4,7 +4,7 @@
 
 A Node.js client for the Elation Health API. Work In Progress, pull requests accepted.
 
-## Usage:
+## Usage
 
 ```js
 // elation-client.js
@@ -84,10 +84,9 @@ type PatientUpdateData = {
 elationClient.Patient().update(patientID: ID, updateData: PatientUpdateData): Promise<Patient[]>
 ```
 
-
 ### Note Endpoints
 
-Build/Save: 
+Build/Save:
 
 ```js
 const data = {

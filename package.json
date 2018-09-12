@@ -1,6 +1,6 @@
 {
   "name": "elationjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A node SDK for interacting with the Elation Health API",
   "main": "dist/index.js",
   "repository": "pdeona/elation-health.js",
