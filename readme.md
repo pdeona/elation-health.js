@@ -19,7 +19,7 @@ const credentials = { // your Elation API credentials
 const sandbox: boolean = false // Use sandbox API URL. default: true
 
 const apiClient = new Elation(credentials, sandbox)
-apiClient.initiailize()
+apiClient.initialize()
 
 export default apiClient
 ```
