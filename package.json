@@ -1,8 +1,9 @@
 {
-  "name": "elation-health",
+  "name": "elationjs",
   "version": "1.0.0",
   "description": "A node SDK for interacting with the Elation Health API",
   "main": "dist/index.js",
+  "repository": "pdeona/elation-health.js",
   "scripts": {
     "precommit": "lint-staged",
     "format": "prettier --write \"src/**/*{.js, .json}\"",
