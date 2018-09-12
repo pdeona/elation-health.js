@@ -1,0 +1,47 @@
+{
+  "name": "elation-health",
+  "version": "1.0.0",
+  "description": "A node SDK for interacting with the Elation Health API",
+  "main": "dist/index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "format": "prettier --write \"src/**/*{.js, .json}\"",
+    "prepackage": "rimraf \"dist/\"",
+    "package": "babel \"src/\" --out-dir \"dist/\" --copy-files",
+    "prepublish": "npm run package"
+  },
+  "author": "Pedro De Ona",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "flow-bin": "^0.75.0",
+    "jest": "^23.4.1",
+    "prettier": "^1.13.5",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "rimraf": "^2.6.2"
+  },
+  "engines": {
+    "node": "^10.5.0",
+    "yarn": "^1.7.0"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "resolutions": {
+    "eslint-scope": "3.7.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "query-string": "^6.1.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "semi": false,
+  "parser": "flow",
+  "printWidth": 80,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "overrides": [{
+    "files": [".prettierrc", "package.json"],
+    "options": { "parser": "json" }
+  }]
+}
