@@ -38,6 +38,12 @@
       "git add"
     ]
   },
+  "keywords": [
+    "elation health",
+    "elation api",
+    "elation",
+    "ehr"
+  ],
   "resolutions": {
     "eslint-scope": "3.7.1"
   },
