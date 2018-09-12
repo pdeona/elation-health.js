@@ -76,6 +76,12 @@ const noteFactory = (client: *): * => class Note {
   document_date: string;
   chart_date: string;
   bullets: Bullet[];
+  static build: (input: NewNoteInput) => Note;
+  static create: (input: NewNoteInput) => Promise<Note>;
+  static postToElation: (note: Note) => Promise<Note>;
+  static getNote: (id: ID) => Promise<Note>;
+  static findNotes: (input: NoteSearchInput) => Promise<Note[]>;
+  static delete: (id: ID) => Promise<void>;
 
   constructor(input: NoteInput) {
     this.id = input.id
@@ -135,7 +141,13 @@ const noteFactory = (client: *): * => class Note {
   }
 
   static findNotes(input: NoteSearchInput): Promise<Note[]> {
-    const searchQString: string = Object.keys(input).reduce((qString: string, key) => qString.concat(input[key].map(data => `&${key}[]=${data}`).join('')), '')
+    const searchQString: string = Object.keys(input)
+      .reduce(
+        (qString: string, key) => qString.concat(
+          input[key].map(data => `&${key}[]=${data}`).join(''),
+        ),
+        '',
+      )
     return client.get(`visit_notes/${searchQString.replace(/^&/, '?')}`)
       .then(({ data }) => data.results.map(note => new this(note)))
   }
@@ -149,4 +161,5 @@ const noteFactory = (client: *): * => class Note {
   }
 }
 
+export type NoteClient = $Call<typeof noteFactory, Client>
 export default noteFactory

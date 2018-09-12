@@ -2,17 +2,16 @@
 import note from './Note'
 import patient from './Patient'
 import api from './Client'
-import type { Client } from './Client'
 import type { ElationCredentials } from './Client'
 
 class Elation {
-  client: Client;
+  client: *;
   initialize: () => Promise<void>;
-  Patient: () => $Call<typeof patient, Client>;
-  Note: () => $Call<typeof note, Client>;
+  Patient: () => $Call<typeof patient, *>;
+  Note: () => $Call<typeof note, *>;
 
   constructor(credentials: ElationCredentials, sandbox: boolean = true) {
-    const APIClient: Client = api(credentials, sandbox)
+    const APIClient = api(credentials, sandbox)
     this.client = new APIClient()
     this.initialize = this.client.initialize
   }

@@ -37,7 +37,7 @@ type ElationInput = {|
   client: axios,
 |}
 
-function ClientFactory(credentials: ElationCredentials, sandbox: boolean) {
+function clientFactory(credentials: ElationCredentials, sandbox: boolean) {
   const URL = sandbox 
     ? 'https://sandbox.elationemr.com/api/2.0/'
     : 'https://app.elationemr.com/api/2.0'
@@ -141,7 +141,7 @@ function ClientFactory(credentials: ElationCredentials, sandbox: boolean) {
     refreshAuthToken = (): Promise<void> => {
       const refreshQstring: string = QueryString.stringify({
         grant_type: 'refresh_token',
-        refresh_token: (this.refresh),
+        refresh_token: this.refresh,
       })
 
       return this.client.post('/oauth2/token/', refreshQstring, {
@@ -188,6 +188,4 @@ function ClientFactory(credentials: ElationCredentials, sandbox: boolean) {
   }
 }
 
-export type Client = $Call<typeof ClientFactory, ElationCredentials, boolean>
-
-export default ClientFactory
+export default clientFactory
