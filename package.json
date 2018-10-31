@@ -1,6 +1,6 @@
 {
   "name": "elationjs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A node SDK for interacting with the Elation Health API",
   "main": "dist/index.js",
   "repository": "pdeona/elation-health.js",
@@ -14,11 +14,6 @@
   "author": "Pedro De Ona",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^5.0.0",
-    "eslint-plugin-flowtype": "^2.49.3",
-    "flow-bin": "^0.75.0",
-    "jest": "^23.4.1",
-    "prettier": "^1.13.5",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -26,6 +21,11 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "flow-bin": "^0.75.0",
+    "jest": "^23.4.1",
+    "prettier": "^1.13.5",
     "rimraf": "^2.6.2"
   },
   "engines": {
