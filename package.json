@@ -1,6 +1,6 @@
 {
   "name": "elationjs",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A node SDK for interacting with the Elation Health API",
   "main": "dist/index.js",
   "repository": "pdeona/elation-health.js",
@@ -29,7 +29,7 @@
     "rimraf": "^2.6.2"
   },
   "engines": {
-    "node": "^8.12.0",
+    "node": "^8.0.0",
     "yarn": "^1.7.0"
   },
   "lint-staged": {
