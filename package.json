@@ -1,15 +1,16 @@
 {
   "name": "elationjs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A node SDK for interacting with the Elation Health API",
   "main": "dist/index.js",
   "repository": "pdeona/elation-health.js",
   "scripts": {
     "precommit": "lint-staged",
     "format": "prettier --write \"src/**/*{.js, .json}\"",
-    "prepackage": "rimraf \"dist/\"",
-    "package": "babel \"src/\" --out-dir \"dist/\" --copy-files",
-    "prepublish": "npm run package"
+    "prebuild": "rimraf \"dist/\"",
+    "build": "babel \"src/\" --out-dir \"dist/\" --copy-files",
+    "postbuild": "flow-copy-source src -v dist",
+    "prepublish": "npm run build"
   },
   "author": "Pedro De Ona",
   "license": "ISC",
