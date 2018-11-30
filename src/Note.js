@@ -40,7 +40,7 @@ type Bullet = {
   +text: string,
 }
 
-type NoteInput = {
+export type NoteInput = {
   +id?: ID,
   +type: string,
   +template: NoteTemplate,

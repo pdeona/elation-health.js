@@ -36,7 +36,36 @@ type PatientMetadata = {
   },
 }
 
-type PatientData = {
+type Insurance = {
+  insurance_company: number,
+  insurance_plan: number,
+  rank: 'primary' | 'secondary' | 'tertiary',
+  carrier: string,
+  member_id: string,
+  group_id: string,
+  plan: string,
+  phone: string,
+  extension: string,
+  address_line1: string,
+  address_line2: string,
+  city: string,       
+  state: string,
+  zip: number,
+  copay: number,  
+  deductible: number,   
+  insured_person_first_name: string,
+  insured_person_last_name: string,
+  insured_person_address: string,
+  insured_person_city: string,
+  insured_person_state: string,    
+  insured_person_zip: number,
+  insured_person_dob: string,    
+  insured_person_gender: 'F' | 'M',
+  insured_person_ssn: number, 
+  relationship_to_insured: string,     
+}
+
+export type PatientData = {
   id: ID,
   first_name: string,
   last_name: string,
@@ -46,8 +75,9 @@ type PatientData = {
   caregiver_practice: ID,
   address: Address,
   phones: Phone[],
-  email: Email[],
+  emails: Email[],
   metadata: PatientMetadata,
+  insurances: Insurance[],
 }
 
 type PatientUpdateData = {
@@ -59,8 +89,9 @@ type PatientUpdateData = {
   caregiver_practice?: ID,
   address?: Address,
   phones?: Phone[],
-  email?: Email[],
+  emails?: Email[],
   metadata?: PatientMetadata,
+  insurances?: Insurance[],
 }
 
 type FindPatientsData = {
@@ -81,8 +112,9 @@ export default function PatientsFactory(client: *): * {
     caregiver_practice: ID;
     address: Address;
     phones: Phone[];
-    email: Email[];
+    emails: Email[];
     metadata: PatientMetadata;
+    insurances: Insurance[]
 
     constructor(input: PatientData) {
       this.id = input.id
@@ -94,8 +126,9 @@ export default function PatientsFactory(client: *): * {
       this.caregiver_practice = input.caregiver_practice
       this.address = input.address
       this.phones = input.phones
-      this.email = input.email
+      this.emails = input.emails
       this.metadata = input.metadata
+      this.insurances = input.insurances
     }
 
     toObject = (): PatientData => ({
@@ -108,8 +141,9 @@ export default function PatientsFactory(client: *): * {
       caregiver_practice: this.caregiver_practice,
       address: this.address,
       phones: this.phones,
-      email: this.email,
+      emails: this.emails,
       metadata: this.metadata,
+      insurances: this.insurances,
     })
 
     static update(patientID: ID, input: PatientUpdateData): Promise<Response> {

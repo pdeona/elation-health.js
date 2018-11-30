@@ -89,6 +89,7 @@ elationClient.Patient().update(patientID: ID, updateData: PatientUpdateData): Pr
 Build/Save:
 
 ```js
+const Note = elationClient.Note()
 const data = {
   type: 'Visit Note',
   template: 'Simple',

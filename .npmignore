@@ -1,1 +1,6 @@
 src
+*ignore
+*rc
+*config
+*.lock
+*.tgz
